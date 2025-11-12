@@ -3,6 +3,8 @@
   height: 100vh;
   background-image: url("../img/header.svg");
   background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
 }
 
 .header__title {
