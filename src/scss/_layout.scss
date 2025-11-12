@@ -1,0 +1,14 @@
+$container-min: 1280px;
+$container-ideal: 1440px;
+$container-max: 1600px;
+
+body {
+  min-width: $container-min;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 20px;
+}

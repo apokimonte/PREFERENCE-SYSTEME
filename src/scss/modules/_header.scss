@@ -1,0 +1,45 @@
+.header {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/HEADER.png");
+  background-size: cover;
+}
+
+.header__content {
+}
+.header__title {
+  color: var(--COLORS-WHITE, #fff);
+  padding-top: 253px;
+  text-align: center;
+  font-family: "TT Backwards Sans Trial";
+  font-size: 144.56px;
+  font-weight: 900;
+  line-height: 90.688%;
+  letter-spacing: -7.228px;
+}
+
+.header__button {
+  display: flex;
+
+  width: 196px;
+  padding: 15.28px 39px 15.28px 39px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 22.92px;
+  border: 3.82px solid var(--COLORS-BLACK, #151515);
+  background: var(--COLORS-YELLOW, #fbf540);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header__button p {
+  color: var(--COLORS-BLACK, #151515);
+  font-family: "TT Backwards Sans Trial";
+  font-size: 23.836px;
+  font-weight: 900;
+  letter-spacing: -1.192px;
+  width: 126px;
+  height: 25px;
+  text-align: center;
+  white-space: nowrap;
+}
