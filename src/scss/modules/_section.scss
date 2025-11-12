@@ -20,3 +20,11 @@
   justify-content: center;
   transform: translateY(486px);
 }
+
+.section__third {
+  color: var(--COLORS-BLACK, #151515);
+  text-align: center;
+  font-family: Bangers;
+  font-size: 36px;
+  transform: translateY(486+512px);
+}
