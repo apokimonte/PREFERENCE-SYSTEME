@@ -1,0 +1,15 @@
+.section__first {
+  display: flex;
+  justify-content: center;
+  transform: translateY(318px);
+}
+
+.section__first--left {
+  transform: translateX(-22.67px);
+  transform: translateY(-169px);
+}
+
+.section__first--right {
+  transform: translateX(20px);
+  transform: translateY(300px);
+}

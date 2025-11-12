@@ -63,3 +63,11 @@
   display: flex;
   justify-content: center;
 }
+
+.header__element--left {
+  transform: translateY(-200px);
+}
+
+.header__element--right {
+  transform: translateY(-175px);
+}
