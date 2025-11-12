@@ -28,6 +28,7 @@ body {
       12 12,
     auto;
   animation: cursor-bounce 3.5s ease-in-out infinite;
+  overflow-x: hidden;
 }
 
 button {
