@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   transform: translateY(318px);
+  margin-bottom: 700px;
 }
 
 .section__first--left {
@@ -12,4 +13,10 @@
 .section__first--right {
   transform: translateX(20px);
   transform: translateY(300px);
+}
+
+.section__second {
+  display: flex;
+  justify-content: center;
+  transform: translateY(486px);
 }

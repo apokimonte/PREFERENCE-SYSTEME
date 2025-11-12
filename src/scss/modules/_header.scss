@@ -27,24 +27,6 @@
   background: var(--COLORS-YELLOW, #fbf540);
   margin-left: auto;
   margin-right: auto;
-
-  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.3, 1), filter 0.25s ease,
-    box-shadow 0.25s ease;
-  transform-origin: center;
-  will-change: transform, filter;
-}
-
-.header__button:hover,
-.header__button:focus {
-  transform: scale(1.04);
-  filter: brightness(0.9);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-  outline: none;
-}
-
-.header__button:active {
-  transform: scale(0.995);
-  filter: brightness(0.85);
 }
 
 .header__button p {
