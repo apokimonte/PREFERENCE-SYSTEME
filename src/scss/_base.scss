@@ -50,3 +50,9 @@ button:active {
   transform: scale(0.995);
   filter: brightness(0.85);
 }
+
+article {
+  margin-top: 415px;
+  background: var(--COLORS-WHITE, #fff);
+  padding-top: 93.51px;
+}
