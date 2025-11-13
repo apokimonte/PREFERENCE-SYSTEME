@@ -1,0 +1,30 @@
+.progress {
+  margin-top: 53.56px;
+}
+
+.progress__bar {
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--COLORS-BLUE, #7ebdeb);
+  width: 1064px;
+  height: 13px;
+  flex-shrink: 0;
+  padding: 0%;
+}
+
+.progress__loading {
+  width: 533.358px;
+  height: 13px;
+  flex-shrink: 0;
+  background: var(--COLORS-BLACK, #151515);
+  padding: 0%;
+}
+
+.progress_text {
+  color: var(--COLORS-BLACK, #151515);
+  text-align: center;
+  font-family: Bangers;
+  font-size: 36px;
+  font-weight: 400;
+  margin-top: 16.73px;
+}

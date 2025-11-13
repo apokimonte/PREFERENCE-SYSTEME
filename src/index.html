@@ -2,7 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>eikon parcel starter</title>
+    <title>Préférence Système - Le livre</title>
+    <meta
+      name="description"
+      content="Entrez dans un système saturé de données. Effacez, sauvegardez, et découvrez Préférence Système d’Ugo Bienvenu à travers une expérience web interactive."
+    />
+    <meta
+      property="og:title"
+      content="Préférence Système — Expérience interactive inspirée d’Ugo Bienvenu"
+    />
+    <meta
+      property="og:description"
+      content="Effacez, sauvegardez, et découvrez un futur où la mémoire se perd dans le flux numérique. Une expérience web inspirée de l’univers d’Ugo Bienvenu."
+    />
+    <meta
+      property="og:image"
+      content="https://preferencesysteme.com/img/og-image.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://preferencesysteme.com" />
+    <link rel="icon" sizes="32x32" href="img/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="scss/main.scss" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -134,16 +153,21 @@
       </h2>
     </section>
 
-    <figure>
-      <div class="figure__line">
-        <div class="red"></div>
-        <div class="white"></div>
-        <div class="blue"></div>
-        <div class="light_blue"></div>
+    <div class="loading" id="trigger2">
+      <figure>
+        <div class="figure__line">
+          <div class="red"></div>
+          <div class="white"></div>
+          <div class="blue"></div>
+          <div class="light_blue"></div>
+        </div>
+        <figcaption>SUPPRESSION DES DONNÉES EN COURS...</figcaption>
+      </figure>
+      <div class="progress">
+        <div class="progress__bar"><div class="progress__loading"></div></div>
+        <div class="progress_text">50.04%</div>
       </div>
-      <figcaption>SUPPRESSION DES DONNÉES EN COURS...</figcaption>
-    </figure>
-    <!-- il reste a faire le truc de la barre, attendre le PoC de Noah -->
+    </div>
 
     <article>
       <div class="container">
@@ -207,8 +231,50 @@
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-2 offset-1"></div>
-          <img src="img/logo.svg" alt="" />
+          <div class="col-2 offset-1 footer__logo">
+            <img src="img/logo.svg" alt="" />
+          </div>
+        </div>
+        <div class="row footer__infos__title">
+          <div class="col-2 offset-1 footer__credits">
+            <p>CRÉDITS</p>
+          </div>
+          <div class="col-2 offset-2 footer__newsletter">
+            <p>NEWSLETTER</p>
+          </div>
+          <div class="col-2 offset-2 footer__contact">
+            <p>CONTACT</p>
+          </div>
+        </div>
+        <div class="row footer__infos">
+          <div class="col-2 offset-1 footer__credits">
+            <p>
+              Ugo Bienvenue <br />
+              Denöel Graphic
+            </p>
+          </div>
+          <div class="col-2 offset-2 footer__newsletter__inscription">
+            <p>S'inscrire à la newsletter</p>
+          </div>
+          <div class="col-2 offset-2 footer__socials">
+            <a href="https://www.instagram.com/denoelgraphic/?hl=en"
+              ><img src="img/insta.svg" alt="Instagram"
+            /></a>
+            <a href="https://www.facebook.com/EditionsDenoel"
+              ><img src="img/facebook.svg" alt="facebook"
+            /></a>
+            <a href="https://x.com/EDITIONSDENOEL"
+              ><img src="img/x.svg" alt="X"
+            /></a>
+          </div>
+        </div>
+        <div class="row footer__bottom">
+          <div class="col-2 offset-1 footer__rights">
+            <p>© 2025 – Projet pédagogique</p>
+          </div>
+          <div class="col-2 offset-2 footer__editions">
+            <p>Magazines & Librairies</p>
+          </div>
         </div>
       </div>
     </footer>

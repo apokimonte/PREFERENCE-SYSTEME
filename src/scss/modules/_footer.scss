@@ -1,0 +1,53 @@
+.footer__logo img {
+  width: 196px;
+  height: 41px;
+  flex-shrink: 0;
+}
+
+.footer__infos__title {
+  color: var(--COLORS-WHITE, #fff);
+  font-family: Coolvetica;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding-top: 43.32px;
+}
+
+.footer__infos {
+  padding-top: 35px;
+  color: var(--COLORS-WHITE, #fff);
+  font-family: Coolvetica;
+  font-weight: 400;
+}
+
+.footer__newsletter__inscription {
+  color: var(--COLORS-WHITE, #fff);
+  font-family: Coolvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: 7%; /* 1.12px */
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 18.36px;
+  align-items: center;
+}
+
+.footer__bottom {
+  padding-top: 35px;
+  color: var(--COLORS-WHITE, #fff);
+  font-family: Coolvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-bottom: 107.71px;
+}

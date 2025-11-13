@@ -12,23 +12,13 @@ img,
 video {
   display: block;
 }
-@keyframes cursor-bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(8px);
-  }
-}
+
 body {
   background: var(--COLORS-LIGHTBLUE, #afdaf8);
   background-image: url("../img/background.svg");
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="black" d="M12 22L2 12h8V2h4v10h8z"/></svg>')
       12 12,
     auto;
-  animation: cursor-bounce 3.5s ease-in-out infinite;
-  overflow-x: hidden;
 }
 
 button {
@@ -55,4 +45,10 @@ article {
   margin-top: 415px;
   background: var(--COLORS-WHITE, #fff);
   padding-top: 93.51px;
+  padding-bottom: 93.51px;
+}
+
+footer {
+  background: var(--COLORS-BLACK, #151515);
+  padding-top: 36px;
 }
