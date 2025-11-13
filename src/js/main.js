@@ -114,3 +114,80 @@ ScrollTrigger.create({
   onEnterBack: showDeleteMessage,
   onLeaveBack: hideDeleteMessage,
 });
+
+// ...existing code...
+(function () {
+  const section = document.querySelector(".section__first");
+  if (!section) return;
+
+  const bubbleLeft = section.querySelector(".section__first--left"); // bulle_3
+  const bubbleRight = section.querySelector(".section__first--right"); // bulle_4
+  const mecs = section.querySelector(".section__first--center"); // MECS 2
+
+  if (!bubbleLeft || !bubbleRight || !mecs) return;
+
+  // perf hint
+  mecs.style.willChange = "transform";
+
+  // use GSAP quickSetter for smooth GPU-backed translation on the Y axis
+  const setY = gsap.quickSetter(mecs, "y", "px");
+
+  let currentY = 0; // used for lerp smoothing
+  const SMOOTH = 0.15; // 0 = no movement, 1 = instant. Ajuste pour plus/moins de lissage.
+
+  function clamp(v, a = 0, b = 1) {
+    return Math.min(b, Math.max(a, v));
+  }
+  function lerp(a, b, t) {
+    return a + (b - a) * t;
+  }
+
+  function update() {
+    const rectSection = section.getBoundingClientRect();
+    const sectionTopDoc = window.scrollY + rectSection.top;
+    const sectionHeight = rectSection.height;
+    const viewportH = window.innerHeight;
+    const scrollY = window.scrollY;
+
+    const progress = clamp(
+      (scrollY + viewportH - sectionTopDoc) / (sectionHeight + viewportH),
+      0,
+      1
+    );
+
+    const leftRect = bubbleLeft.getBoundingClientRect();
+    const rightRect = bubbleRight.getBoundingClientRect();
+    const mecsRect = mecs.getBoundingClientRect();
+
+    const leftCenterDocY = window.scrollY + leftRect.top + leftRect.height / 2;
+    const rightCenterDocY =
+      window.scrollY + rightRect.top + rightRect.height / 2;
+    const mecsCenterDocY = window.scrollY + mecsRect.top + mecsRect.height / 2;
+
+    const targetCenterDocY = lerp(leftCenterDocY, rightCenterDocY, progress);
+    const delta = targetCenterDocY - mecsCenterDocY;
+
+    // Smoothly interpolate the applied Y so movement is less jittery
+    currentY = lerp(currentY, delta, SMOOTH);
+
+    // apply via GSAP quickSetter (uses translate3d under the hood)
+    setY(currentY);
+  }
+
+  let ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(() => {
+        update();
+        ticking = false;
+      });
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", () => requestAnimationFrame(update));
+  // initial
+  requestAnimationFrame(update);
+})();
+// ...existing code...

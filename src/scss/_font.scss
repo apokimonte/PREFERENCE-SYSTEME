@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "TT Backwards Sans";
+  src: url("../fonts/backwards-thin.woff2") format("woff2"),
+    url("../fonts/backwards-thin.woff") format("woff");
+  font-weight: 265;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Backwards Sans";
+  src: url("../fonts/backwards-title.woff2") format("woff2"),
+    url("../fonts/backwards-title.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
