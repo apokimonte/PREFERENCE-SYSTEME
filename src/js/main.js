@@ -6,12 +6,10 @@ const loadingWrapper = document.querySelector(".loading");
 
 let hideTimeout = null;
 
-// ensure a smooth opacity transition
 if (loadingWrapper) loadingWrapper.style.transition = "opacity 0.2s ease";
 
 const deleteMessage = document.querySelector(".section__third");
 
-// ensure a smooth opacity transition for delete message
 if (deleteMessage) deleteMessage.style.transition = "opacity 0.2s ease";
 
 function showLoading() {
@@ -21,7 +19,7 @@ function showLoading() {
     hideTimeout = null;
   }
   loadingWrapper.style.display = "";
-  // ensure layout applied before changing opacity
+
   requestAnimationFrame(() => {
     loadingWrapper.style.opacity = "1";
     loadingWrapper.style.pointerEvents = "";
@@ -36,17 +34,17 @@ function hideLoading() {
   }
   loadingWrapper.style.opacity = "0";
   loadingWrapper.style.pointerEvents = "none";
-  // delay setting display none to avoid flashes while scrub animates opacity
+
   hideTimeout = setTimeout(() => {
     if (loadingWrapper && loadingWrapper.style.opacity === "0")
       loadingWrapper.style.display = "none";
-  }, 500); // 0.5s delay
+  }, 500);
 }
 
 function showDeleteMessage() {
   if (!deleteMessage) return;
   deleteMessage.style.display = "";
-  // ensure layout applied before changing opacity
+
   requestAnimationFrame(() => {
     deleteMessage.style.opacity = "1";
   });
@@ -55,14 +53,13 @@ function showDeleteMessage() {
 function hideDeleteMessage() {
   if (!deleteMessage) return;
   deleteMessage.style.opacity = "0.001";
-  // delay setting display none
+
   setTimeout(() => {
     if (deleteMessage && deleteMessage.style.opacity === "0")
       deleteMessage.style.display = "none";
-  }, 200); // 0.2s delay
+  }, 200);
 }
 
-// start hidden before trigger
 hideLoading();
 hideDeleteMessage();
 
@@ -83,7 +80,6 @@ gsap.fromTo(
         const el = document.querySelector(".progress_text");
         if (el) el.textContent = `${percent}%`;
 
-        // show while between start and end, hide at the very start or at the end
         if (self.progress > 0 && self.progress < 1) {
           showLoading();
         } else {
@@ -104,7 +100,6 @@ gsap.fromTo(
   }
 );
 
-// Separate ScrollTrigger for .delete-message
 ScrollTrigger.create({
   trigger: "#trigger2",
   start: "center bottom",
@@ -115,25 +110,22 @@ ScrollTrigger.create({
   onLeaveBack: hideDeleteMessage,
 });
 
-// ...existing code...
 (function () {
   const section = document.querySelector(".section__first");
   if (!section) return;
 
-  const bubbleLeft = section.querySelector(".section__first--left"); // bulle_3
-  const bubbleRight = section.querySelector(".section__first--right"); // bulle_4
-  const mecs = section.querySelector(".section__first--center"); // MECS 2
+  const bubbleLeft = section.querySelector(".section__first--left");
+  const bubbleRight = section.querySelector(".section__first--right");
+  const mecs = section.querySelector(".section__first--center");
 
   if (!bubbleLeft || !bubbleRight || !mecs) return;
 
-  // perf hint
   mecs.style.willChange = "transform";
 
-  // use GSAP quickSetter for smooth GPU-backed translation on the Y axis
   const setY = gsap.quickSetter(mecs, "y", "px");
 
-  let currentY = 0; // used for lerp smoothing
-  const SMOOTH = 0.15; // 0 = no movement, 1 = instant. Ajuste pour plus/moins de lissage.
+  let currentY = 0;
+  const SMOOTH = 0.15;
 
   function clamp(v, a = 0, b = 1) {
     return Math.min(b, Math.max(a, v));
@@ -167,10 +159,8 @@ ScrollTrigger.create({
     const targetCenterDocY = lerp(leftCenterDocY, rightCenterDocY, progress);
     const delta = targetCenterDocY - mecsCenterDocY;
 
-    // Smoothly interpolate the applied Y so movement is less jittery
     currentY = lerp(currentY, delta, SMOOTH);
 
-    // apply via GSAP quickSetter (uses translate3d under the hood)
     setY(currentY);
   }
 
@@ -187,7 +177,6 @@ ScrollTrigger.create({
 
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", () => requestAnimationFrame(update));
-  // initial
+
   requestAnimationFrame(update);
 })();
-// ...existing code...
