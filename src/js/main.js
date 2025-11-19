@@ -2,6 +2,25 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+(function () {
+  const headerElement = document.querySelector(".header__element--center");
+  const header = document.querySelector(".header");
+
+  if (!headerElement || !header) return;
+
+  headerElement.style.willChange = "transform";
+
+  gsap.to(headerElement, {
+    y: 200,
+    scrollTrigger: {
+      trigger: header,
+      start: "top top",
+      end: "bottom top",
+      scrub: 1,
+    },
+  });
+})();
+
 const loadingWrapper = document.querySelector(".loading");
 
 let hideTimeout = null;
