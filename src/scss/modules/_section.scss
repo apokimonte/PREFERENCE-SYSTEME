@@ -8,11 +8,17 @@
 .section__first--left {
   transform: translateX(-22.67px);
   transform: translateY(-169px);
+  width: 303.333px;
+  height: 175px;
+  flex-shrink: 0;
 }
 
 .section__first--right {
   transform: translateX(20px);
   transform: translateY(300px);
+  width: 305px;
+  height: 179px;
+  flex-shrink: 0;
 }
 
 .section__second {

@@ -1,7 +1,7 @@
 .header {
   width: 100vw;
   height: 100vh;
-  background-image: url("../img/header.svg");
+  background-image: url("../img/header.png");
   background-size: cover;
   background-position: top center;
   background-attachment: fixed;
@@ -49,9 +49,15 @@
 }
 
 .header__element--left {
-  transform: translateY(-200px);
+  transform: translateY(-70px);
+  width: 200.718 * 1.5px;
+  height: 192.72 * 1.5px;
+  flex-shrink: 0;
 }
 
 .header__element--right {
-  transform: translateY(-175px);
+  transform: translateY(-55px);
+  width: 243.037 * 1.5px;
+  height: 157.805 * 1.5px;
+  flex-shrink: 0;
 }
