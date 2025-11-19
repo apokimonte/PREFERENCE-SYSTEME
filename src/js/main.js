@@ -180,3 +180,36 @@ ScrollTrigger.create({
 
   requestAnimationFrame(update);
 })();
+
+(function () {
+  const contentImages = document.querySelectorAll('[class^="content_image_"]');
+
+  if (!contentImages.length) return;
+
+  contentImages.forEach((img) => {
+    img.style.willChange = "opacity, transform, filter";
+
+    gsap.to(img, {
+      scrollTrigger: {
+        trigger: img,
+        start: "top bottom",
+        end: "bottom top",
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const clamped = Math.max(0, Math.min(1, progress));
+          const opacity = clamped < 0.5 ? clamped * 2 : (1 - clamped) * 2;
+          const parallaxY = (clamped - 0.5) * 20;
+          const scale = 0.8 + clamped * 0.4;
+          const rotation = (clamped - 0.5) * 8;
+          const blur = (1 - clamped) * 0;
+          const skewX = (clamped - 0.5) * 4;
+
+          img.style.opacity = Math.max(0, Math.min(1, opacity));
+          img.style.transform = `translateY(${parallaxY}px) scale(${scale}) rotate(${rotation}deg) skewX(${skewX}deg)`;
+          img.style.filter = `blur(${blur}px)`;
+        },
+      },
+      duration: 1,
+    });
+  });
+})();
