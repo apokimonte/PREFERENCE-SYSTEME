@@ -4,7 +4,7 @@
   font-size: 37px;
   font-style: normal;
   font-weight: 900;
-  line-height: 90.688%; /* 33.554px */
+  line-height: 90.688%;
   letter-spacing: -1.85px;
 }
 
@@ -16,7 +16,6 @@
   font-weight: 265;
   line-height: 90.688%;
   letter-spacing: -1.85px;
-  margin-left: -40px;
 }
 .article_image img {
   margin-top: 58.36px;
@@ -64,7 +63,6 @@ h4 {
   font-family: Coolvetica;
   font-size: 16px;
   font-weight: 400;
-  height: 255.602px;
   align-self: stretch;
   margin-bottom: 28px;
 }
@@ -77,13 +75,14 @@ h4 {
   font-weight: 900;
   line-height: normal;
   letter-spacing: -1.192px;
+  margin-bottom: 18px;
 }
 
 .article__buttons {
   display: flex;
   align-items: center;
-  gap: 20px;
   align-self: stretch;
+  gap: 60px;
 }
 
 .article__buttons button {
@@ -101,7 +100,6 @@ h4 {
   text-align: center;
   font-family: "TT Backwards Sans Trial";
   font-size: 18px;
-  font-style: normal;
   font-weight: 900;
   line-height: normal;
   letter-spacing: -0.9px;
